@@ -28,7 +28,7 @@
 
 
     <!--====== NEWS SECTION START ======-->
-    <section class="blog-section pt-120">
+    <section class="blog-section pt-120 pb-70">
         <div class="container">
             <div class="row justify-content-center">
                 <!-- Blog Loop Start -->
