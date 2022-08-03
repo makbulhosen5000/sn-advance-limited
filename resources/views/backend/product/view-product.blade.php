@@ -47,6 +47,7 @@
                             {{-- <th>Brand</th> --}}
                             <th>Product Name</th>
                             <th>Product Price</th>
+                            <th>Product Model</th>
                             <th>Short Description</th>
                             <th>Long Description</th>
                             <th>Product Image</th>
@@ -58,11 +59,12 @@
                         @foreach ($product as $key => $item)
                             <tr class="{{ $item->id }}">
                                 <td>{{ $key + 1 }}</td>
-                                <td>{{ $item->category->name }}</td>
-                                <td>{{ $item->subcategory->name }}</td>
+                                <td>{{ $item->category->name ?? 'none'}}</td>
+                                <td>{{ $item->subcategory->name  ?? 'none'}}</td>
                                 {{-- <td>{{$item->brand->name}}</td> --}}
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->price }}</td>
+                                <td>{{ $item->model }}</td>
                                 <td>
                                     <textarea name="" id="" cols="32" rows="5" style="text-align: justify">
                                     {{ $item->short_desc }}

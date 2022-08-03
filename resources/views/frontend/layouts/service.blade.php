@@ -18,7 +18,7 @@
         <div class="services-loop mt-50">
             <div class="row justify-content-center">
                 @foreach ($services as $service)
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="single-service-two">
                         <div class="top-icon">
                             <i class="fa-solid fa-arrow-right"></i>

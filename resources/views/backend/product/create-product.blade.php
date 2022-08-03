@@ -117,21 +117,29 @@
                     <font style="color:red">{{($errors->has('color_id'))?($errors->first('color_id')):''}} </font>
                   </div>
                 </div> --}}
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                       <div class="form-group">
                         <label for="my-input">Product Name</label>
                         <input type="text" class="form-control" name="name" id="" value="{{@$editData->name}}" type="text" placeholder="Enter Product Name" required>
                         <font style="color:red">{{($errors->has('name'))?($errors->first('name')):''}} </font>
                       </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label>Product Price</label>
+                    {{-- <label>Product Price</label> --}}
+                    <input class="form-control-sm" type="text" style="width: 100%;" name="price" value="{{@$editData->price}}"placeholder="Enter Product Price" />
+                    <font style="color:red">{{($errors->has('price'))?($errors->first('price')):''}} </font>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
                         <div class="form-group">
                         <label>Product Model</label>
                         {{-- <label>Product Price</label> --}}
-                        <input class="form-control-sm" type="text" style="width: 100%;" name="price" value="{{@$editData->price}}"placeholder="Enter Product Model Name" required />
-                        <font style="color:red">{{($errors->has('price'))?($errors->first('price')):''}} </font>
+                        <input class="form-control-sm" type="text" style="width: 100%;" name="model" value="{{@$editData->model}}" placeholder="Enter Product Model Name" />
+                        <font style="color:red">{{($errors->has('model'))?($errors->first('model')):''}} </font>
                         </div>
-                     </div>
+                  </div>
                 </div>
                 <!-- row end -->
                 <!-- row start -->

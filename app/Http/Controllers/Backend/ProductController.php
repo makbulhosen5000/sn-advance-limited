@@ -48,9 +48,8 @@ class ProductController extends Controller
            $validatedData = $request->validate([
                'name' => 'required|unique:products,name',
                'sub_category_id' => 'required',
+               'category_id' => 'required',
             // 'brand_id' => 'required',
-               'price' => 'required',
-
            ]);
        });
 
@@ -62,9 +61,11 @@ class ProductController extends Controller
     //   $storeData->size_id=$request->size_id;
       $storeData->name=$request->name;
       $storeData->slug=Str::slug($request->name);
+      $storeData->price=$request->price;
+      $storeData->model=$request->model;
       $storeData->short_desc=$request->short_desc;
       $storeData->long_desc=$request->long_desc;
-      $storeData->price=$request->price;
+
 
 
       $img=$request->file('image');
@@ -155,9 +156,10 @@ class ProductController extends Controller
     // $updateData->size_id=$request->size_id;
        $updateData->name=$request->name;
        $updateData->slug=str_slug($request->name);
+       $updateData->price=$request->price;
+       $updateData->model=$request->model;
        $updateData->short_desc=$request->short_desc;
        $updateData->long_desc=$request->long_desc;
-       $updateData->price=$request->price;
        $img=$request->file('image');
        if($img){
            $imgName=date('YmdHi').$img->getClientOriginalName();

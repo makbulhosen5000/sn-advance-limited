@@ -289,6 +289,12 @@
                   <p>Product List</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('products.medicine.view')}}" class="nav-link {{($route=='products.medicine.view')?'active':''}} ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Medicine & Fish Feed</p>
+                </a>
+              </li>
             </ul>
         </li>
         <li class="nav-item has-treeview {{($prefix=='/email')?'menu-open':''}} ">

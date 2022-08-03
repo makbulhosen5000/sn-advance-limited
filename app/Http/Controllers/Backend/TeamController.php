@@ -31,23 +31,22 @@ class TeamController extends Controller
             'description' => 'required',
 
         ]);
-       $userData=new team();
-       $userData->name=$request->name;
-       $userData->slug=$request->name;
-     //$storeData->slug=Str::slug($request->name);
-       $userData->designation=$request->designation;
-       $userData->description=$request->description;
+       $storeData=new team();
+       $storeData->name=$request->name;
+       $storeData->slug=Str::slug($request->name);
+       $storeData->designation=$request->designation;
+       $storeData->description=$request->description;
        if($request->hasFile('image')){
         $file=$request->file('image');
         $extension=$file->getClientOriginalExtension();
         $newImage=time().'.'.$extension;
         $file->move('public/images/team/',$newImage);
-        $userData->image=$newImage;
+        $storeData->image=$newImage;
        }else{
         return $request;
-        $userData->image='';
+        $storeData->image='';
        }
-       $userData->save();
+       $storeData->save();
        Session::flash('success','Team Created successfully');
        return redirect()->back();
     }
@@ -75,8 +74,7 @@ class TeamController extends Controller
     {
         $updateData=Team::find($request->id);
         $updateData->name=$request->name;
-        $updateData->slug=$request->name;
-        // $updateData->slug=Str::slug($request->name);
+        $updateData->slug=Str::slug($request->name);
         $updateData->designation=$request->designation;
         $updateData->description=$request->description;
         if($request->hasFile('image')){

@@ -11,7 +11,7 @@
         </div>
         <ul class="breadcrumb-nav">
             <li class="text-white"><a href="{{url('/')}} " class="text-white">Home</a></li>
-            <li class="text-white">{{$subCategory->name}}</li>
+            <li class="text-white">{{$subCategory->price}}</li>
         </ul>
         <span class="btg-text" style="font-size: 200px">S.n Advance Limited</span>
     @endforeach    

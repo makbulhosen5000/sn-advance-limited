@@ -46,37 +46,40 @@
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widget nav-widget d-flex justify-content-start">
                         <div>
-                            <h5 class="widget-title">Company</h5>
+                            <h5 class="widget-title">Useful Link</h5>
                             <ul>
                                 <li><a href="{{url('/')}}">Home</a></li>
-                                <li><a href="{{route('about.us')}}">About</a></li>
-                                <li><a href="{{route('contact.us')}}">Contact Us</a></li>
+                                <li><a href="{{route('about.us')}}">About Us</a></li>
+                                <li><a href="{{route('our.team')}}">Our Team</a></li>
+                                <li><a href="{{route('news')}}">News</a></li>
+                                <li><a href="{{route('career')}}">Career</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget nav-widget d-flex justify-content-start justify-content-lg-center">
-                        <div>
-                            <h5 class="widget-title">Community</h5>
-                            <ul>
-                                <li><a href="#">Tutorials</a></li>
-                                <li><a href="#">Meetups</a></li>
-                                <li><a href="#">Q&amp;A</a></li>
-                                <li><a href="#">Write for DOnations</a></li>
 
+                    <div class="widget nav-widget d-flex justify-content-start justify-content-lg-center">
+                        <div>
+               
+                            <h5 class="widget-title">Services</h5>
+                            <ul>  
+                                @foreach ($categorieses as $category)
+                                <li><a href="{{route('category.details',$category->slug)}}">{{$category->name}}</a></li>
+                                @endforeach
+                                <li><a href="{{route('medicine.feed')}}">Medicine & Fish Feed</a></li>
                             </ul>
-                        </div>
+
+                        </div> 
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget nav-widget d-flex justify-content-start justify-content-lg-center">
                         <div>
-                            <h5 class="widget-title">Solutions</h5>
+                            <h5 class="widget-title">Address</h5>
                             <ul>
-                                <li><a href="#">Air Freight</a></li>
-                                <li><a href="#">Road Freight</a></li>
-                                <li><a href="#">Local Delivery</a></li>
+                                <li><a href="#"><i class="fas fa-map-marker-alt"></i> {{$contacts->address}} </a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -86,9 +89,9 @@
                         <div>
                             <h5 class="widget-title">Contact Us</h5>
                             <ul>
-                                <li><a href="#">Air Freight</a></li>
-                                <li><a href="#">Road Freight</a></li>
-                                <li><a href="#">Local Delivery</a></li>
+                                <li><a href="#"><i class="fa-solid fa-phone"></i> {{$contacts->phone}}</a></li>
+                                <li><a href="#"><i class="fa-solid fa-envelope"></i> {{$contacts->email}}</a></li>
+                                <li><a href="#"><i class="fa-solid fa-envelope"></i> demo@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>

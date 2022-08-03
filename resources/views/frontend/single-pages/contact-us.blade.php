@@ -1,3 +1,4 @@
+
 @extends('frontend/layouts.master')
 @section('content')
 
@@ -34,7 +35,7 @@
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-5 d-none d-sm-block">
                     <div class="contact-page-link text-right">
-                        <a href="#" class="main-btn btn-filled">get a guote</a>
+                        <a href=" {{route('contact.us')}} " class="main-btn btn-filled">get a guote</a>
                     </div>
                 </div>
             </div>
@@ -73,18 +74,21 @@
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="contact-form">
-                            <form  action="{{route('contact.store')}}" method="POST" class="mf_form_validate ajax_submit" enctype="multipart/form-data">
+                            <form  action="{{route('contact.store')}}" method="POST">
                                 @csrf
-                                @if(Session::has('success'))
-                                <div class="btn btn-warning">{{Session::get('success')}} </div>
-                                @endif
+                                @if(Session::get('success'))
+                                <div class="alert alert-danger alert-dismissible">
+                                     <button type="butto" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>{{Session::get('success')}}</strong>
+                                </div>
+                                @endif  
                                 <div class="row padding-custom">
                                     <div class="col-12 col-lg-6">
                                         <div class="input-group mb-10">
                                             <div class="icon">
                                                 <i class="fas fa-user"></i>
                                             </div>
-                                            <input type="text" placeholder="Your name" name="name">
+                                            <input type="text" placeholder="Your name *" name="name"  required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -92,15 +96,23 @@
                                             <div class="icon">
                                                 <i class="fa-solid fa-envelope"></i>
                                             </div>
-                                            <input type="email" placeholder="Your email" name="email">
+                                            <input type="email" placeholder="Your email *" name="email" required>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="input-group mb-10">
                                             <div class="icon">
                                                 <i class="fa-solid fa-phone"></i>
                                             </div>
-                                            <input type="text" placeholder="Your Phone" name="phone">
+                                            <input type="text" placeholder="Your Phone *" name="phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group mb-10">
+                                            <div class="icon">
+                                                <i class="fab fa-product-hunt"></i>
+                                            </div>
+                                            <input type="text" placeholder="Your Product name" name="product_name">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -108,15 +120,15 @@
                                             <div class="icon">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </div>
-                                            <textarea placeholder="Enter message" name="massage"></textarea>
+                                            <textarea placeholder="Enter message *" name="massage"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center">
                                         <button type="submit" class="main-btn btn-filled">Get A QUote</button>
                                     </div>
-                                    <div class="col-12">
+                                    {{-- <div class="col-12">
                                         <div class="server_response w-100"></div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </form>
                         </div>
@@ -140,26 +152,7 @@
         </div>
     </section>
     <!--====== CONTACT SECTION END ======-->
-
-    <section>
-        <div class="clinet-section"  style="margin-bottom:100px">
-            <div class="container-fluid custom-width-three">
-                <div class="clinet-slider">
-                    @foreach ($CompaniesBrandLogos as $CompaniesBrandLogo)       
-                    <div class="clinet-item">
-                        <a href="#">
-                            <img src="{{asset('public/images/companies-image/'.$CompaniesBrandLogo->image)}}" alt="Image">
-                        </a>
-                    </div>
-                    @endforeach
-                  
-                </div>              
-            </div>           
-        </div>
-    </section>
-     
 @endsection
-
 
 
 

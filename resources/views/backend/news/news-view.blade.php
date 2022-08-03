@@ -45,7 +45,7 @@
                         <th>Long_Description</th>
                         <th>Date</th>
                         <th>Image</th>
-                        <th width="17%">Action</th>
+                        <th width="20%">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,11 +55,11 @@
                         <td>{{$item->title}}</td>
                         <td>{{$item->slug}}</td>
                         <td>
-                          <textarea name="" id="" cols="32" rows="5" style="text-align: justify">
+                          <textarea name="" id="" cols="35" rows="5" style="text-align: justify">
                           {{$item->short_desc}}
                         </textarea></td>
                         <td>
-                          <textarea name="" id="" cols="32" rows="5" style="text-align: justify">
+                          <textarea name="" id="" cols="35" rows="5" style="text-align: justify">
                           {{$item->long_desc}}
                         </textarea>
                       </td>

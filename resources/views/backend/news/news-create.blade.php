@@ -80,8 +80,9 @@
                         </div>
                         <div class="form-group">
                             <label for="my-input">Upload Pdf</label>
-                            <input id="my-input" class="form-control" type="file" name="pdf" id="file" value='{{@$editData->pdf}}'>
-                        </div>
+                            <iframe src="{{(!empty($editData->pdf))?url('public/images/news/'.$editData->pdf):url('public/images/not_found_img.png')}}" id="image" width="540px";height='200px' frameborder="0"></iframe>
+                            <input id="my-input" class="form-control" type="file" name="image" id="file" onchange="showImage(this,'image')" value=''>
+                          </div>
                         <div class="form-group">
                             <label for="my-input">Image</label>
                             <img src="{{(!empty($editData->image))?url('public/images/news/'.$editData->image):url('public/images/not_found_img.png')}}" id="image" width="540px";height='200px'>

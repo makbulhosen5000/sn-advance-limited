@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label for="my-input">Short Description</label>
                             <textarea class="form-control" type="text" name="short_desc" id="#" rows="5"
-                                placeholder="Enter Your Short Description" placeholder="Please Enter Short Description Nor Career">{{ @$editData->short_desc }}</textarea>
+                                placeholder="Enter Your Short Description" placeholder="Please Enter Short Description For Career">{{ @$editData->short_desc }}</textarea>
                             <font style="color:red">{{ $errors->has('short_desc') ? $errors->first('short_desc') : '' }}
                             </font>
                         </div>
@@ -87,8 +87,9 @@
                         </div>
                         <div class="form-group">
                             <label for="my-input">Upload Pdf</label>
-                            <input id="my-input" class="form-control" type="file" name="image" id="file" value='{{@$editData->image}}'>
-                        </div>
+                            <iframe src="{{(!empty($editData->image))?url('public/images/career/'.$editData->image):url('public/images/not_found_img.png')}}" id="image" width="540px";height='200px' frameborder="0"></iframe>
+                            <input id="my-input" class="form-control" type="file" name="image" id="file" onchange="showImage(this,'image')" value=''>
+                          </div>
                         <div class="form-group">
                             <button type="submit" id="button"
                                 class="btn btn-success">{{ @$editData ? 'Update' : 'Submit' }} </button>

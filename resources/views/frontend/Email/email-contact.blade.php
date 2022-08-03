@@ -3,6 +3,7 @@
     <p>Name : {{$name}} </p>
     <p>Phone : {{$phone}} </p>
     <p>Email : {{$email}} </p>
+    <p>Product-Name : {{$product_name}} </p>
     <p>Massage : {{$massage}} </p>
 </div>
-<p><strong> We will recieved your massage.We will contact as soon as possibe </strong></p>
+{{-- <p><strong> We will recieved your massage.We will contact as soon as possibe </strong></p> --}}

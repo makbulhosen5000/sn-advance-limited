@@ -58,7 +58,11 @@
                             <td>{{$key+1}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->slug}}</td>
-                            <td>{{$item->details}}</td>
+                            <td>
+                              <textarea name="" id="" cols="32" rows="5" style="text-align: justify">
+                              {{ $item->details }}
+                              </textarea>
+                            </td>
                             <td><img src="{{asset('public/images/category_image/'.$item->image)}}" width="60px";height='60px' alt=""></td>
 
 

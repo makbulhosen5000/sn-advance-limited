@@ -60,14 +60,18 @@
                             <td> {{$item->category->name }}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->slug}}</td>
-                            <td>{{$item->details}}</td>
+                            <td>
+                              <textarea name="" id="" cols="32" rows="5" style="text-align: justify">
+                              {{ $item->details }}
+                              </textarea>
+                            </td>
                             <td><img src="{{asset('public/images/sub_category_image/'.$item->image)}}" width="60px";height='60px' alt=""></td>
 
                             <td width="15%">
                                 <a href="{{route('sub.categories.edit',$item->id)}}" class="btn btn-warning" title="Edit"><i class="fa fa-user-edit"></i></a>
-                                {{-- @if($count_category<1) --}}
+                                @if($dataCount<1)
                                 <a href="{{route('sub.categories.destroy',$item->id)}} " id="delete" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></a>
-                                {{-- @endif --}}
+                                @endif
                             </td>
                         </tr>
                         @endforeach

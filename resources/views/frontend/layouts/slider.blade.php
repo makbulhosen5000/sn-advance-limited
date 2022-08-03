@@ -3,11 +3,25 @@
     $count = 0;
  @endphp
  <style>
-    
     .sliderHeight{
         height: 630px;
-    }
+        }
 
+    @media only screen and (max-width: 1200px){
+        .sliderHeight{
+        height: 530px;
+        }
+    }
+@media only screen and (max-width: 600px){
+    .sliderHeight{
+        height: 330px;
+        }
+}
+@media only screen and (max-width: 425px){
+    .sliderHeight{
+        height: 230px;
+        }
+}
  </style>
 <div class="row">
     <div class="col-ls-12 col-md-12 col-sm-12">
@@ -19,7 +33,7 @@
             </ol>
             <div class="carousel-inner">
                     @foreach($sliders as  $slider)
-                <div class="sliderHeight has-bg-img bg-purple bg-blend-overlay carousel-item @if($count==0){ active } @endif">
+                <div class="sliderHeight has-bg-img bg-purple bg-blend-overlay carousel-item @if($count==0){ active } @endif" style="">
                        <img class="bg-img  d-block w-100 " src="{{asset('public/images/slider_images/'.$slider->image)}}" alt="slide">
                     <div class="text-center carousel-caption d-none d-md-block">
                         <h1 style="font-size: 100px;" class="text-white" >{{$slider->sort_title}}</h1>

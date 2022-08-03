@@ -7798,8 +7798,8 @@ footer .footer-top {
 }
 
 footer .footer-widget-area {
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 10px;
 }
 
 footer .footer-widget-area .widget {
@@ -7819,7 +7819,7 @@ footer .footer-widget-area .widget .widget-title {
     font-size: 20px;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

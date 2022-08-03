@@ -49,12 +49,15 @@
                                         </figure>
                                     </div>
                                 </div>
+                                @if(!$news->pdf)
+                                @else
                                 <div class="col-lg-6">
                                     <div class="post-grid-box mb-30">
                                         <iframe src="{{ asset('public/images/news/' . $news->pdf) }}" height="662"
                                             width="500"></iframe>
                                     </div>
                                 </div>
+                                @endif
 
                             </div>
                         @endforeach

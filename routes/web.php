@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\CountDownTimerController;
 use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\CompaniesBrandLogoController;
+use App\Http\Controllers\Backend\MedicineFishFeedController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SizeController;
@@ -50,9 +51,12 @@ Route::get('/our-team',[FrontendController::class,'OurTeam'])->name('our.team');
 Route::get('/news',[FrontendController::class,'News'])->name('news');
 Route::get('/news/details/{slug}',[FrontendController::class,'NewsDetails'])->name('news.details');
 Route::get('/career',[FrontendController::class,'Career'])->name('career');
-Route::get('/team-member-description{slug}',[FrontendController::class,'TeamMemberDescription'])->name('team.member.description');
+Route::get('/team-member-description/{slug}',[FrontendController::class,'TeamMemberDescription'])->name('team.member.description');
+Route::get('/category-details/{slug}',[FrontendController::class,'CategoryDetails'])->name('category.details');
 Route::get('/sub-cat-details/{slug}',[FrontendController::class,'SubCatDetails'])->name('sub.cat.details');
-Route::post('/contact-store',[FrontendController::class,'Store'])->name('contact.store');
+Route::get('/medicine-feed',[FrontendController::class,'MedicineFeed'])->name('medicine.feed');
+Route::get('/category',[FrontendController::class,'']);
+Route::post('/contact-store',[FrontendController::class,'ContactStore'])->name('contact.store');
 Route::get('/shopping-cart',[FrontendController::class,'ShoppingCart'])->name('shopping.cart');
 // Route::get('/product-list',[FrontendController::class,'ProductList'])->name('product.list');
 //shopping cart routes
@@ -234,13 +238,18 @@ Route::get('/edit/{id}',[ProductController::class,'edit'])->name('products.edit'
 Route::get('/details/{slug}',[ProductController::class,'details'])->name('products.details.info');
 Route::post('/updated/{id}',[ProductController::class,'update'])->name('products.update');
 Route::get('/destroy/{id}',[ProductController::class,'destroy'])->name('products.destroy');
+//medicine and fish feed routes
+Route::get('/medicine/view',[MedicineFishFeedController::class,'index'])->name('products.medicine.view');
+Route::get('/medicine/create',[MedicineFishFeedController::class,'create'])->name('products.medicine.create');
+Route::post('/medicine/store',[MedicineFishFeedController::class,'store'])->name('products.medicine.store');
+Route::get('/medicine/edit/{id}',[MedicineFishFeedController::class,'edit'])->name('products.medicine.edit');
+Route::post('/medicine/updated/{id}',[MedicineFishFeedController::class,'update'])->name('products.medicine.update');
+Route::get('/medicine/destroy/{id}',[MedicineFishFeedController::class,'destroy'])->name('products.medicine.destroy');
 
 
 });
 
-
-
-//User Email route
+//User Email route for admin panel
 Route::prefix('email')->group(function () {
 Route::get('user-email.view',[FrontendController::class,'UserEmailView'])->name('user-email.view');
 Route::get('/user-email.destroy/{id}',[FrontendController::class,'destroy'])->name('user-email.destroy');

@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--====== Title ======-->
-    <title>SN ADVANCE LTD | Home</title>
+    <title>SN ADVANCE LTD | HOME</title>
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{asset('public/images/logo/'.$logo->image)}}" type="img/png" />
     <!--====== Animate Css ======-->
@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/default.css" />
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/style.css" />
+    {{-- <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/scss/_header.scss" />
+    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/scss/_variables.scss" /> --}}
         <!--====== bootstrap cdn ======-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

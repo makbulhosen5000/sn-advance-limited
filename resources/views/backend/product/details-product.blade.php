@@ -60,6 +60,10 @@
                 <td>{{$productDetails->price}}</td>
             </tr>
             <tr>
+                <td width="25%">Product Model</td>
+                <td>{{$productDetails->model}}</td>
+            </tr>
+            <tr>
                 <td width="25%">Product Short-Description</td>
                 <td>{{$productDetails->short_desc}}</td>
             </tr>

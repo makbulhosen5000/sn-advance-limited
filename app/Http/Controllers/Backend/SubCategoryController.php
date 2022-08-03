@@ -17,8 +17,8 @@ class SubCategoryController extends Controller
        public function index()
        {
            $subCategories=SubCategory::all();
-           // $catCount=Category::count();
-           return view('backend.sub-category.view-sub-category', compact('subCategories'));
+           $dataCount=SubCategory::count();
+           return view('backend.sub-category.view-sub-category', compact('subCategories','dataCount'));
        }
    
           //__category create function is here__//

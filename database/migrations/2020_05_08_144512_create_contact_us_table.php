@@ -18,6 +18,7 @@ class CreateContactUsTable extends Migration
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
+            $table->string('product_name')->nullable();
             $table->longText('massage')->nullable();
             $table->timestamps();
         });

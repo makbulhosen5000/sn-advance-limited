@@ -3,17 +3,20 @@
 
 
 
-<section class="breadcrumb-section" style="background-image: url(public/frontend/assets/img/video-bg-2.jpg);">
+<section class="breadcrumb-section" style="background-image: url({{asset('public')}}/frontend/assets/img/video-bg-2.jpg);">
     <div class="container">
+        @foreach ($teams as $team)
         <div class="breadcrumb-text">
-            <h1>Our Team Members</h1>
-            <p>Trusted Logistics Company</p>
+            <h1>{{$team->name}}</h1>
+            <h2>{{$team->designation}}</h2>
+            {{-- <p>Trusted Logistics Company</p> --}}
         </div>
         <ul class="breadcrumb-nav" style="color:white">
             <li class="text-white"><a href="{{url('/')}} "class="text-white">Home</a></li>
-            <li class="text-white">Team Members</li>
+            <li class="text-white">{{$team->name}}</li>
         </ul>
         <span class="btg-text" style="font-size: 200px">S.n Advance Limited</span>
+        @endforeach
     </div>
     <div class="breadcrumb-shape">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">

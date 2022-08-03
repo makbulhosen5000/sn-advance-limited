@@ -49,7 +49,9 @@
                     <div class="single-service-two "  style=" background-color:#F2F4F8;">
                          <a href=""> <img src="{{asset('public/images/product_images/'.$product->image)}}" width="280px" height="200px" alt="Image"></a>
                          <h5 style="color:#23232c;;padding-top:10px;font-family: Poppins;font-weight: 400;font-size: 20px;line-height: 2.14286">{{$product->name}}</h5>
-                         <h5 style="color:#1e1e23;;font-weight: 600;line-height: 30px;">Model {{$product->price}}</h5>
+                         <h5 style="color:#1e1e23;;font-weight: 600;line-height: 30px;" >Model: {{$product->model}}</h5>
+                         {{-- <h5 style="color:#1e1e23;;font-weight: 600;line-height: 30px;" >Price: {{$product->price}} TK</h5> --}}
+
                          <p>
                             {{-- {{$product->description}} --}}
                         </p>

@@ -4,7 +4,7 @@
 
 
 
-<section class="breadcrumb-section" style="background-image: url(public/frontend/assets/img/video-bg-2.jpg);">
+<section class="breadcrumb-section" style="background-image: url({{asset('public')}}/frontend/assets/img/video-bg-2.jpg);">
     <div class="container">
         <div class="breadcrumb-text">
             <h1>Our Team Members</h1>
@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row justify-content-center team-loop">
             @foreach($teams as $team)
-                <div class="col-lg-6 col-sm-6">
+                <div class="col-lg-4 col-sm-6">
                     <div class="member-box">
                         <div class="member-img">
                             <img src="{{asset('public/images/team/'.$team->image)}}" alt="Team-Image">

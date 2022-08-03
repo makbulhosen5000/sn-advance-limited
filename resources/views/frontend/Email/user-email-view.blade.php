@@ -39,6 +39,7 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>Product Name</th>
                         <th>Massage</th>
                         <th>Action</th>
 
@@ -51,6 +52,7 @@
                         <td>{{$mail->name}}</td>
                         <td>{{$mail->phone}}</td>
                         <td>{{$mail->email}}</td>
+                        <td>{{$mail->product_name}}</td>
                         <td> <textarea name="massage" id="" cols="15" rows="5">{{$mail->massage}}</textarea></td>
                         <td>
                             <a href="{{route('user-email.destroy',$mail->id)}} " id="delete" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></a>

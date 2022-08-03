@@ -1,14 +1,20 @@
+<style>
+    .moretext {
+  display: none;
+}
+
+</style>
 @extends('frontend/layouts.master')
 @section('content')
     <section class="breadcrumb-section" style="background-image: url(public/frontend/assets/img/video-bg-2.jpg);">
         <div class="container">
             <div class="breadcrumb-text">
-                <h1>News</h1>
+                <h1>Career</h1>
                 <p>Trusted Logistics Company</p>
             </div>
             <ul class="breadcrumb-nav" style="color:white">
                 <li class="text-white"><a href="{{ url('/') }} "class="text-white">Home</a></li>
-                <li class="text-white">News</li>
+                <li class="text-white">Career</li>
             </ul>
             <span class="btg-text" style="font-size: 200px">S.n Advance Limited</span>
         </div>
@@ -36,13 +42,16 @@
                             <div class="col-lg-6">
                                     <div class="post-grid-box mb-30">
                                         <ul class="post-cat">
-                                            <li><a href="#">Career</a></li>
+                                            <li ><a href="#" class="text-white">Career</a></li>
                                         </ul>
                                         <div class="post-desc">
                                             <h4><a href="{{ route('news.details', $career->slug) }}">{{ $career->title }}</a>
                                             </h4>
-                                            <p>{{ $career->short_desc }}</p> 
-                                            <p>{{ $career->long_desc }}</p>
+                                            <p class="p">{{ $career->short_desc }}</p> 
+                                            <p class="moretext">{{ $career->long_desc }}</p>
+                                            <a  class="moreless-button"  style="font-weight: bold; color:#EB120A">Read more</a>
+
+
                                         </button>
                                         </div>
                                         <ul class="post-meta">
@@ -62,13 +71,15 @@
                                         </figure> --}}
                                     </div>
                             </div>
+                           @if(!$career->image)
+                           @else
                             <div class="col-lg-6">
                                 <div class="post-grid-box mb-30">
                                     <iframe src="{{ asset('public/images/career/'.$career->image) }}" height="662"
                                         width="500"></iframe>
                                 </div>
                             </div>
-                              
+                            @endif
                         </div>
                         @endforeach
                     </div>
@@ -97,22 +108,27 @@
             </div>
         </div>
     </section>
+
+    <script>
+    //     $(document).ready(function () {
+    //     $(".content").hide();
+    //     $(".show_hide").on("click", function () {
+    //     var txt = $(".content").is(':visible') ? 'Read More' : 'Read Less';
+    //     $(".show_hide").text(txt);
+    //     $(this).next('.content').slideToggle(1000);
+    //    });
+    //    });
+
+    $('.moreless-button').click(function() {
+  $('.moretext').slideToggle();
+  if ($('.moreless-button').text() == "Read more") {
+    $(this).text("Read less")
+  } else {
+    $(this).text("Read more")
+  }
+});
+</script>
+
+
 @endsection
 
-<script>
-    function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
-}
-</script>

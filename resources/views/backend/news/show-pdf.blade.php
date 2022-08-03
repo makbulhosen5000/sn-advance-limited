@@ -34,11 +34,13 @@
             </div>
         </div>
     </div>
-
+    @if(!$showData->pdf)
+    @else
     <div class="container pl-5">
           <iframe height="400"  width="996" src="{{asset('public/images/news/'.$showData->pdf)}}"></iframe>
    
       </div>    
+    @endif
 
 
 

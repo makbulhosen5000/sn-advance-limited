@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Auth; 
 use Session;
 use App\Http\Requests\CategoryRequest;
+use Illuminate\Support\Str;
+
+
 class CategoryController extends Controller
 {
      //__category view function is here__//
@@ -33,7 +36,7 @@ class CategoryController extends Controller
          ]);
         $storeData=new Category();
         $storeData->name=$request->name;
-        $storeData->slug=str_slug($request->name);
+        $storeData->slug=Str::slug($request->name);
         $storeData->details=$request->details;
         $storeData->status = (isset($request['status'])) ? 'Active' : 'Inactive';    
         $img=$request->file('image');
@@ -69,7 +72,7 @@ class CategoryController extends Controller
      {
          $updateData=Category::find($id);
          $updateData->name=$request->name;
-         $updateData->slug=$request->name;
+         $updateData->slug = Str::slug($request->name);
          $updateData->details=$request->details;
          $updateData->status=(isset($request['status'])) ? 'Active' : 'Inactive';
          $img=$request->file('image');
@@ -86,7 +89,7 @@ class CategoryController extends Controller
      }
  
      //__category delete function is here__//
-     public function destroy($id)
+     public function destroy(Request $request, $id)
      {
         $deleteData=Category::find($id);
         if(file_exists('public/images/category_image/'.$deleteData->image)AND ! empty($deleteData->image))
